@@ -1,0 +1,346 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px 50px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black;
+  position: relative;
+  margin: 5em auto;
+}
+
+.title {
+  font-size: 30px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: royalblue;
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-weight: light;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.3em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.5em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: green;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 12px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transform: 0.3s ease;
+}
+
+.submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+#error3,
+#error2 {
+  font-size: 12px;
+  color: red;
+}
+#Form {
+  padding: 2em;
+  top: 4em;
+}
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+}
+#welcome {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px black;
+  padding: 2em 2em;
+  margin: 6em auto auto auto;
+  width: fit-content;
+}
+.head h3 {
+  text-align: center;
+}
+span {
+  color: royalblue;
+  font-weight: bolder;
+}
+.btn {
+  background-color:  royalblue;
+  color: #fff;
+}
+.btn:hover{
+  background-color: royalblue;
+  transition: all 2s linear ease-in-out;
+  transform: translateY(5px);
+  color: #fff;
+}
+#welcome h4 {
+  color: red;
+}
+li {
+  line-height: 1.8;
+}
+.li li{
+  list-style: circle;
+}
+img{
+  mix-blend-mode: color-burn;
+  background-color: black;
+}
+#hello{
+  font-size: 30px;
+  font-family: Arial;
+  padding: 1em;
+  font-weight: 500px;
+  letter-spacing: 1px;
+  animation: drop 1.5s;
+}
+ul li{
+  list-style-type: none;
+}
+.actions{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  padding: 10px;
+}
+#submit{
+  display: none;
+  background-color: green;
+  color: #fff;
+  border:none;
+  padding:10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="radio"],label {
+  cursor: pointer;
+}
+#prev{
+  cursor: pointer;
+  color: #fff;
+  background-color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+#next{
+  cursor: pointer;
+  color: #fff;
+  background-color: royalblue;
+  border:none;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+#question{
+  font-size: 16px;
+}
+.quiz-container {
+  background-color: #fff;
+  width: 500px;
+  height: 200px;
+  box-shadow: 0 0 10px black;
+  border-radius: 25px;
+  padding: 50px;
+  margin:6em auto;
+}
+#result-container{
+  background-color: #fff;
+  width: 300px;
+  height: 100px;
+  box-shadow: 0 0 10px black;
+  border-radius: 25px;
+  padding: 50px;
+  margin:6em auto;
+}
+#result-container{
+  display: none;
+}
+#result-container h2, #result-container p{
+  font-size: 18px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  letter-spacing: 1px;
+}
+#timeCount{
+  float: right;
+  font-size: 16px;
+  font-weight: bolder;
+}
+.loader{
+ margin: 2em auto;
+ color: royalblue;
+}
+#pageUp{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@keyframes drop {
+    from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .form {
+    top: 0em;
+    
+  }
+  #Form {
+    top: 6em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .form {
+    top: 0em;
+    box-shadow: none;
+    box-shadow: none;
+  }
+  #Form {
+    top: 0em;
+  }
+  .title{
+    margin: auto 1em;
+    font-size: 40px;
+  }
+  .message{
+    margin: auto auto;
+  }
+  #welcome{
+    box-shadow: none;
+  }
+  .quiz-container {
+    background-color: none;
+    box-shadow: none;
+  }
+  #question{
+    font-size: 25px;
+  }
+  input[type="radio"],label {
+    font-size: 25px;
+  }
+  .actions{
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  #submit,#prev{
+    padding: 20px;
+}
+#next{
+  padding: 10px 25px;
+}
+.form label input[type="text"], 
+.form label input[type="password"],
+.form label input[type="email"]{
+   font-size: 13px;
+}
+.form label .input + span{
+  font-size: 0.4em;
+}
+.form{
+  margin: 1em auto;
+}
+.form label .input {
+  width: 100%;
+  padding: 6px 10px 16px 10px;
+}
+}

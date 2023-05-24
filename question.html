@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/apple-touch-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/register.css">
+    <title>M-QUIZ</title>
+</head>
+<body>
+    <div class="loader text-center">
+        <div class="spinner-grow" role="status">
+            <span class="visually-hidden"></span>
+          </div>
+      </div>
+      <div id="pageUp">
+        <div id="hello"></div>
+        <div class="quiz-logo">
+          <img src="./image/icons8-test.gif" alt="">
+      </div>
+      </div>
+    <div class="quiz-container" id="quiz">
+        <div id="timer"></div>
+        <div class="quiz-header">
+            <h2 id="question">question</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" class="op_label" id="a_text">option1</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" class="op_label" id="b_text">option1</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" class="op_label" id="c_text">option1</label>
+                </li>
+            </ul>
+            <div class="actions">
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
+                <button id="submit">Submit</button>
+                <p id="time" class="time" ></p>
+            </div>
+        </div>
+    </div>
+    <div id="result-container">
+        <p id="tried"></p>
+        <h2 id="scored"></h2>
+    </div>
+      <script src="./js/question.js"></script>
+</body>
+</html>
