@@ -7,10 +7,6 @@ const phone = document.getElementById('phone')
 const confirmpassword = document.getElementById('confirmpassword')
 const phoneRegex = /^[0-9]{11}$/;
 
-window.onload = function() {
-    var loader = document.querySelector(".spinner-grow");
-    loader.style.display = "none"; // Hide the loader
-};
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();

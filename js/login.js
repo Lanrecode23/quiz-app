@@ -3,10 +3,7 @@ const myEmail = document.getElementById('email')
 const myPassword = document.getElementById('password');
 const message = document.getElementById('outerMessage')
 
-window.onload = function() {
-    var loader = document.querySelector(".spinner-grow");
-    loader.style.display = "none"; // Hide the loader
-};
+
 myForm.addEventListener("submit", function (e) {
     e.preventDefault();
 

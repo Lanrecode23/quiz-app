@@ -13,15 +13,10 @@ const scoreContainer = document.getElementById("scored");
 const image = document.getElementsByClassName("image");
 const tried = document.getElementById("tried");
 
-window.onload = function() {
-    var loader = document.querySelector(".spinner-grow");
-    loader.style.display = "none"; // Hide the loader
-};
+
 let currentQtn = 0;
 let score = 0;
-let userSelected = {
-
-}
+let userSelected = {}
 
 let Name =JSON.parse(localStorage.getItem('firstname'));
 document.getElementById("hello").innerHTML = `Welcome ${Name}`;
