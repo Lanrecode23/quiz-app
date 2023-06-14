@@ -103,6 +103,8 @@ function loadQuiz(){
     a_text.innerText = questions[currentQtn].a;
     b_text.innerText = questions[currentQtn].b;
     c_text.innerText = questions[currentQtn].c;
+
+    // deselect the already selected button
     deSelected()
     if (userSelected[currentQtn]) {
         let selected = userSelected[currentQtn]
@@ -159,7 +161,7 @@ sumbitBtn.addEventListener("click",function(e) {
         }, 2000);
     }
 })
-
+// get the selected option and check if it tally with the answer
 function getSelected() {
     let answerEl;
     answer.forEach(answer => {
@@ -170,6 +172,7 @@ function getSelected() {
     });
     return answerEl;
 }
+// deselected the first option clicked recently
 function deSelected() {
     answer.forEach(answer => {
         answer.checked = false;
