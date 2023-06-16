@@ -5,7 +5,7 @@ const firstname = document.getElementById('firstname')
 const lastName = document.getElementById('Lastname')
 const phone = document.getElementById('phone')
 const confirmpassword = document.getElementById('confirmpassword')
-const phoneRegex = /^[0-9]{11}$/;
+
 
 
 form.addEventListener('submit', function (e) {
