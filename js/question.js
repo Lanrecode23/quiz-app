@@ -12,11 +12,19 @@ const result = document.getElementById("result-container");
 const scoreContainer = document.getElementById("scored");
 const image = document.getElementsByClassName("image");
 const tried = document.getElementById("tried");
-
+const Timer = document.getElementById("timer");
 
 let currentQtn = 0;
 let score = 0;
 let userSelected = {}
+let timeRemaining = 100
+let min = 0
+let sec = 0
+let counter = 0
+let timer = setInterval(myTimer, 1000)
+
+
+
 
 let Name = JSON.parse(localStorage.getItem('firstname'));
 document.getElementById("hello").innerHTML = `Welcome ${Name}`;
@@ -141,26 +149,43 @@ prevBtn.addEventListener("click", function (e) {
         loadQuiz();
     }
 })
+// ...
+
+function showResult() {
+    quiz.style.display = "none";
+    result.style.display = "block";
+    if (score <= 50) {
+        tried.innerText = "You tried but never give up."
+        tried.style.color = "red";
+        scoreContainer.innerText = "You got " + " " + score + "%" + " " + " out of " + "100%"
+    } else if (score >= 60) {
+        tried.innerText = "Good job! keep it up"
+        tried.style.color = "green"
+        scoreContainer.innerText = "You got " + " " + score + "%" + " " + " out of " + "100%"
+    }
+}
+
+function handleSubmit() {
+
+    // Check if the quiz was submitted by the user or the timer ended
+    if (counter === timeRemaining || currentQtn === questions.length - 1) {
+        clearInterval(timer); // Stop the timer
+        Timer.style.display = "none"; // Hide the timer display
+        showResult(); // Show the result
+        setTimeout(() => {
+            window.location.href = "login.html"; // Redirect after 2 seconds
+        }, 2000);
+    } else {
+        currentQtn++;
+        loadQuiz(); // Move to the next question
+    }
+}
+
 sumbitBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    if (getSelected()) {
-        quiz.style.display = "none";
-        result.style.display = "block";
-        if (score <= 50) {
-            tried.innerText = "You tried but never give up."
-            tried.style.color = "red";
-            scoreContainer.innerText = "You got " + " " + score + "%" + " " + " out of " + "100%"
-        }
-        else if (score >= 60) {
-            tried.innerText = "Good job! keep it up"
-            tried.style.color = "green"
-            scoreContainer.innerText = "You got " + " " + score + "%" + " " + " out of " + "100%"
-        }
-        setTimeout(() => {
-            window.location.href = "login.html"
-        }, 2000);
-    }
-})
+    handleSubmit();
+});
+
 // get the selected option and check if it tally with the answer
 function getSelected() {
     let answerEl;
@@ -177,4 +202,21 @@ function deSelected() {
     answer.forEach(answer => {
         answer.checked = false;
     });
+}
+
+// set the timer function
+function myTimer() {
+    if (counter < timeRemaining) {
+        counter++;
+        min = Math.floor((timeRemaining - counter) / 60);
+        sec = timeRemaining - min * 60 - counter;
+        Timer.innerHTML = "Time left: " + min + ":" + sec;
+    } else {
+        clearInterval(timer); // Stop the timer
+        Timer.style.display = "none"; // Hide the timer display
+
+        // Automatically submit the quiz when time is up
+        sumbitBtn.click();
+        showResult(); // Show the result after the timer ends
+    }
 }
