@@ -222,7 +222,7 @@ input[type="radio"],label {
 .quiz-container {
   background-color: #fff;
   width: 500px;
-  height: 200px;
+  height: 220px;
   box-shadow: 0 0 10px black;
   border-radius: 25px;
   padding: 50px;
@@ -259,6 +259,14 @@ input[type="radio"],label {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+#timer{
+  font-size: 18px;
+  font-weight: light;
+  display: flex;
+  font-family: arial;
+  color: red;
+  justify-content: flex-end; 
 }
 @keyframes drop {
     from {
@@ -310,9 +318,13 @@ input[type="radio"],label {
   .quiz-container {
     background-color: none;
     box-shadow: none;
+    width: 300px;
+    margin: 1em auto;
   }
   #question{
-    font-size: 25px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+
   }
   input[type="radio"],label {
     font-size: 25px;
@@ -342,5 +354,22 @@ input[type="radio"],label {
 .form label .input {
   width: 100%;
   padding: 6px 10px 16px 10px;
+}
+#timer{
+  font-size: 20px;
+  font-weight: light;
+  display: block;
+  font-family: arial;
+  color: red;
+  justify-content: left; 
+}
+
+.op_label{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#result-container{
+  width: 250px;
+  height: 100px;
 }
 }
