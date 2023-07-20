@@ -18,87 +18,87 @@ let currentQtn = 0;
 let score = 0;
 let userSelected = {}
 
-let Name =JSON.parse(localStorage.getItem('firstname'));
+let Name = JSON.parse(localStorage.getItem('firstname'));
 document.getElementById("hello").innerHTML = `Welcome ${Name}`;
 
 let questions = [
-   {
-    question:"1. What does Html stands for?",
-    a:"Home tool markup language",
-    b:"Hyperlink markup language",
-    c:"Hypertext markup language",
-    correct:"c",
-   },
-   {
-    question:"2. Which property is used to control the stacking order of elements in CSS?",
-    a:"position",
-    b:"order",
-    c:"z-index",
-    correct:"c",
-   },
-   {
-    question:"3. How do you select an element with the class name 'example' in CSS?",
-    a:".example",
-    b:"#example",
-    c:"element.example",
-    correct:"a",
-   },
-   {
-    question:"4. Which CSS property is used to add space between the border and content of an element?",
-    a:"margin",
-    b:"padding",
-    c:"space-between",
-    correct:"b",
-   },
-   {
-    question:"5. Which CSS property is used to create a shadow effect around an element?",
-    a:"box-shadow",
-    b:"text-shadow",
-    c:"shadow-effect",
-    d:"element-shadow",
-    correct:"a",
-   },
-   {
-    question:"6. What does css stands for?",
-    a:"Central stylesheets",
-    b:"Cascading stylesheets",
-    c:"cascading sheetstyle",
-    correct:"b",
-   },
-   {
-    question:"7. What does js stands for?",
-    a:"javascript",
-    b:"javasite",
-    c:"javitusite",
-    correct:"a",
-   },
-   {
-    question:"8. The correct place to place an external stylesheet in html file?",
-    a:"in <body> tag",
-    b:"in <head> tag",
-    c:"in the end of the document",
-    correct:"b",
-   },
-   {
-    question:"9. which tag is used to describe an internal stylesheet?",
-    a:"<script> tag",
-    b:"<style> tag",
-    c:"<css> tag",
-    correct:"b",
-   },
-   {
-    question:"10. How do you apply a background image to an element in CSS?",
-    a:"background-image: url(image.jpg)",
-    b:"background: url(image.jpg)",
-    c:"image-source: url(image.jpg)",
-    correct:"a",
-   },
+    {
+        question: "1. What does Html stands for?",
+        a: "Home tool markup language",
+        b: "Hyperlink markup language",
+        c: "Hypertext markup language",
+        correct: "c",
+    },
+    {
+        question: "2. Which property is used to control the stacking order of elements in CSS?",
+        a: "position",
+        b: "order",
+        c: "z-index",
+        correct: "c",
+    },
+    {
+        question: "3. How do you select an element with the class name 'example' in CSS?",
+        a: ".example",
+        b: "#example",
+        c: "element.example",
+        correct: "a",
+    },
+    {
+        question: "4. Which CSS property is used to add space between the border and content of an element?",
+        a: "margin",
+        b: "padding",
+        c: "space-between",
+        correct: "b",
+    },
+    {
+        question: "5. Which CSS property is used to create a shadow effect around an element?",
+        a: "box-shadow",
+        b: "text-shadow",
+        c: "shadow-effect",
+        d: "element-shadow",
+        correct: "a",
+    },
+    {
+        question: "6. What does css stands for?",
+        a: "Central stylesheets",
+        b: "Cascading stylesheets",
+        c: "cascading sheetstyle",
+        correct: "b",
+    },
+    {
+        question: "7. What does js stands for?",
+        a: "javascript",
+        b: "javasite",
+        c: "javitusite",
+        correct: "a",
+    },
+    {
+        question: "8. The correct place to place an external stylesheet in html file?",
+        a: "in <body> tag",
+        b: "in <head> tag",
+        c: "in the end of the document",
+        correct: "b",
+    },
+    {
+        question: "9. which tag is used to describe an internal stylesheet?",
+        a: "<script> tag",
+        b: "<style> tag",
+        c: "<css> tag",
+        correct: "b",
+    },
+    {
+        question: "10. How do you apply a background image to an element in CSS?",
+        a: "background-image: url(image.jpg)",
+        b: "background: url(image.jpg)",
+        c: "image-source: url(image.jpg)",
+        correct: "a",
+    },
 
 ]
 
 loadQuiz()
 
-function loadQuiz(){
+function loadQuiz() {
     question.innerText = questions[currentQtn].question;
     a_text.innerText = questions[currentQtn].a;
     b_text.innerText = questions[currentQtn].b;
@@ -110,38 +110,38 @@ function loadQuiz(){
         let selected = userSelected[currentQtn]
         document.getElementById(selected).checked = true;
     }
-    if (currentQtn == questions.length-1) {
+    if (currentQtn == questions.length - 1) {
         nextBtn.style.display = 'none';
         sumbitBtn.style.display = 'block';
-        
+
     }
 
 }
-nextBtn.addEventListener("click", function(e){
+nextBtn.addEventListener("click", function (e) {
     e.preventDefault();
     let answer = getSelected();
     // if(answer){
     if (answer == questions[currentQtn].correct) {
-        score+=10;
+        score += 10;
     }
     // change the question on next button when clicked
     if (currentQtn < questions.length) {
         currentQtn++;
         loadQuiz()
-        
+
     }
 })
 
-prevBtn.addEventListener("click", function(e){
+prevBtn.addEventListener("click", function (e) {
     e.preventDefault();
     // console.log(currentQtn);
 
     if (currentQtn > 0) {
         currentQtn--;
         loadQuiz();
-        }
+    }
 })
-sumbitBtn.addEventListener("click",function(e) {
+sumbitBtn.addEventListener("click", function (e) {
     e.preventDefault();
     if (getSelected()) {
         quiz.style.display = "none";
@@ -149,12 +149,12 @@ sumbitBtn.addEventListener("click",function(e) {
         if (score <= 50) {
             tried.innerText = "You tried but never give up."
             tried.style.color = "red";
-            scoreContainer.innerText = "You got "+ " " + score +"%" + " "+" out of " + "100%"
+            scoreContainer.innerText = "You got " + " " + score + "%" + " " + " out of " + "100%"
         }
         else if (score >= 60) {
             tried.innerText = "Good job! keep it up"
             tried.style.color = "green"
-            scoreContainer.innerText = "You got "+ " " + score +"%" + " "+ " out of " + "100%"
+            scoreContainer.innerText = "You got " + " " + score + "%" + " " + " out of " + "100%"
         }
         setTimeout(() => {
             window.location.href = "login.html"
@@ -165,8 +165,8 @@ sumbitBtn.addEventListener("click",function(e) {
 function getSelected() {
     let answerEl;
     answer.forEach(answer => {
-        if (answer.checked){
-            answerEl  = answer.id;
+        if (answer.checked) {
+            answerEl = answer.id;
             userSelected[currentQtn] = answer;
         }
     });
