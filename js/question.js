@@ -172,9 +172,9 @@ function handleSubmit() {
         clearInterval(timer); // Stop the timer
         Timer.style.display = "none"; // Hide the timer display
         showResult(); // Show the result
-        setTimeout(() => {
-            window.location.href = "login.html"; // Redirect after 2 seconds
-        }, 2000);
+        // setTimeout(() => {
+        //     window.location.href = "login.html"; // Redirect after 2 seconds
+        // }, 2000);
     } else {
         currentQtn++;
         loadQuiz(); // Move to the next question
